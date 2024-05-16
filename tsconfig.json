@@ -1,5 +1,9 @@
 {
   "extends": "@seokminhong/configs/tsconfig/node",
+  "compilerOptions": {
+    "allowImportingTsExtensions": true,
+    "emitDeclarationOnly": true
+  },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
