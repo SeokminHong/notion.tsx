@@ -35,7 +35,9 @@
     "eslint": "^8.57.0",
     "prettier": "^3.2.5",
     "typescript": "^5.4.5",
-    "vite": "^5.2.11",
-    "vite-plugin-dts": "^3.9.1"
+    "vite": "^5.2.11"
+  },
+  "peerDependencies": {
+    "@notionhq/client": "^2.2.15"
   }
 }

@@ -1,5 +1,4 @@
 import { defineConfig } from 'vite';
-import dts from 'vite-plugin-dts';
 
 const entries = ['src/index.ts', 'src/jsx-runtime.ts'];
 
@@ -11,9 +10,4 @@ export default defineConfig({
     },
     outDir: 'dist',
   },
-  plugins: [
-    dts({
-      include: entries,
-    }),
-  ],
 });
