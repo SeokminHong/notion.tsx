@@ -83,7 +83,12 @@ const res = await client.pages.create({
           {
             code: {
               language: 'javascript',
-              rich_text: [<Text bold>console</Text>, <Text>.log(a)</Text>],
+              rich_text: (
+                <>
+                  <Text bold>console</Text>
+                  <Text>.log(a)</Text>
+                </>
+              ),
             },
           },
         ],
