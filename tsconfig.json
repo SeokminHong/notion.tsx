@@ -1,0 +1,5 @@
+{
+  "extends": "@seokminhong/configs/tsconfig/node",
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}
