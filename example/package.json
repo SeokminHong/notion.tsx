@@ -1,0 +1,25 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsx src/index.tsx"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@notionhq/client": "^2.2.15",
+    "dotenv": "^16.4.5",
+    "notion-jsx": "file:///.."
+  },
+  "devDependencies": {
+    "@seokminhong/configs": "^1.0.3",
+    "eslint": "^8.56.0",
+    "tsx": "^4.10.3",
+    "typescript": "^5.4.5"
+  }
+}
