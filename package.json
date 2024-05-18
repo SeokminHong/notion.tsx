@@ -19,7 +19,8 @@
   },
   "files": [
     "dist",
-    "src"
+    "src",
+    "tsconfig.json"
   ],
   "scripts": {
     "build": "vite build",
