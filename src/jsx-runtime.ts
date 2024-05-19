@@ -1,4 +1,4 @@
-import type { ElementTypeMap } from './types.ts';
+import type { ElementTypeMap } from './types/element.ts';
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
 export namespace JSX {
@@ -28,6 +28,13 @@ export type TextNode =
   | null
   | undefined
   | Iterable<TextNode>;
+
+export type SlotNode =
+  | JSX.Element
+  | false
+  | null
+  | undefined
+  | Iterable<SlotNode>;
 
 type PropType<T> = T extends (props: infer P) => unknown ? P : never;
 

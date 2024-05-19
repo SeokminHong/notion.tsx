@@ -1,23 +1,30 @@
 import type { TextNode } from '../jsx-runtime.ts';
 import renderTextNode from '../render/text-node.ts';
-import type { Color, RichTextItem } from '../types.ts';
-import { tag } from '../types.ts';
+import type { Annotations } from '../types/common.ts';
 
-interface TextProps {
+interface TextProps extends Annotations {
   children: TextNode;
   link?: string;
-  bold?: boolean;
-  italic?: boolean;
-  strikethrough?: boolean;
-  underline?: boolean;
-  code?: boolean;
-  color?: Color;
 }
 
-type TextElement = Extract<RichTextItem, { type?: 'text' }>;
+interface TextElement {
+  type: 'text';
+  text: {
+    content: string;
+    link?: {
+      url: string;
+    } | null;
+  };
+  annotations?: Annotations;
+}
 
-function Text({ children, link, ...annotations }: TextProps): TextElement {
+export default function Text({
+  children,
+  link,
+  ...annotations
+}: TextProps): TextElement {
   return {
+    type: 'text',
     text: {
       content: renderTextNode(children),
       link:
@@ -31,11 +38,7 @@ function Text({ children, link, ...annotations }: TextProps): TextElement {
   };
 }
 
-export default Text as typeof Text & {
-  [tag]: 'text';
-};
-
-declare module '../types.ts' {
+declare module '../types/element.ts' {
   export interface ElementTypeMap {
     text: TextElement;
   }

@@ -1,7 +1,8 @@
 import type { TextNode } from '../jsx-runtime.ts';
+import { isFalsyNode } from '../utils/render.ts';
 
 export default function renderTextNode(textNode: TextNode): string {
-  if (textNode === null || textNode === undefined || textNode === false) {
+  if (isFalsyNode(textNode)) {
     return '';
   }
   if (typeof textNode === 'object') {

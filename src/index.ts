@@ -1,2 +1,3 @@
-// eslint-disable-next-line import/prefer-default-export
+export { default as Code } from './components/Code.tsx';
+export { default as Paragraph } from './components/Paragraph.tsx';
 export { default as Text } from './components/Text.tsx';
