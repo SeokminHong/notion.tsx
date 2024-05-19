@@ -1,8 +1,10 @@
+import type { TextNode } from '../jsx-runtime.ts';
+import renderTextNode from '../render/text-node.ts';
 import type { Color, RichTextItem } from '../types.ts';
 import { tag } from '../types.ts';
 
 interface TextProps {
-  children: string;
+  children: TextNode;
   link?: string;
   bold?: boolean;
   italic?: boolean;
@@ -17,7 +19,7 @@ type TextElement = Extract<RichTextItem, { type?: 'text' }>;
 function Text({ children, link, ...annotations }: TextProps): TextElement {
   return {
     text: {
-      content: children,
+      content: renderTextNode(children),
       link:
         link === undefined
           ? undefined

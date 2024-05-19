@@ -21,6 +21,14 @@ export type Node =
   | undefined
   | Iterable<Node>;
 
+export type TextNode =
+  | string
+  | number
+  | boolean
+  | null
+  | undefined
+  | Iterable<TextNode>;
+
 type PropType<T> = T extends (props: infer P) => unknown ? P : never;
 
 export const jsx = <T extends (props: PropType<T>) => JSX.Element>(

@@ -17,6 +17,9 @@ await client.databases.retrieve({
   database_id: databaseId,
 });
 
+const a = undefined as number | undefined;
+const b = 3 as number | undefined;
+
 const res = await client.pages.create({
   parent: {
     database_id: databaseId,
@@ -37,7 +40,12 @@ const res = await client.pages.create({
   children: [
     {
       paragraph: {
-        rich_text: [<Text>Test content</Text>],
+        rich_text: [
+          <Text>
+            Test {a}
+            {b} content
+          </Text>,
+        ],
         children: [
           {
             code: {
