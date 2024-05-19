@@ -1,4 +1,5 @@
 import { Client } from '@notionhq/client';
+import { Text } from 'notion-jsx';
 
 import 'dotenv/config';
 
@@ -8,55 +9,13 @@ const client = new Client({
 
 const databaseId = process.env.DATABASE_UUID;
 
+if (databaseId === undefined) {
+  throw new Error('env DATABASE_UUID is not provided.');
+}
+
 await client.databases.retrieve({
   database_id: databaseId,
 });
-type Color =
-  | 'default'
-  | 'gray'
-  | 'brown'
-  | 'orange'
-  | 'yellow'
-  | 'green'
-  | 'blue'
-  | 'purple'
-  | 'pink'
-  | 'red'
-  | 'gray_background'
-  | 'brown_background'
-  | 'orange_background'
-  | 'yellow_background'
-  | 'green_background'
-  | 'blue_background'
-  | 'purple_background'
-  | 'pink_background'
-  | 'red_background';
-
-interface TextProps {
-  children: string;
-  link?: string;
-  bold?: boolean;
-  italic?: boolean;
-  strikethrough?: boolean;
-  underline?: boolean;
-  code?: boolean;
-  color?: Color;
-}
-
-function Text({ children, link, ...annotations }: TextProps) {
-  return {
-    text: {
-      content: children,
-      link:
-        link === undefined
-          ? undefined
-          : {
-              url: link,
-            },
-    },
-    annotations,
-  };
-}
 
 const res = await client.pages.create({
   parent: {

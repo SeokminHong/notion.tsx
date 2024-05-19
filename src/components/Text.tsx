@@ -1,4 +1,5 @@
-import type { Color } from '../types.ts';
+import type { Color, RichTextItem } from '../types.ts';
+import { tag } from '../types.ts';
 
 interface TextProps {
   children: string;
@@ -11,7 +12,9 @@ interface TextProps {
   color?: Color;
 }
 
-export default function Text({ children, link, ...annotations }: TextProps) {
+type TextElement = Extract<RichTextItem, { type?: 'text' }>;
+
+function Text({ children, link, ...annotations }: TextProps): TextElement {
   return {
     text: {
       content: children,
@@ -24,4 +27,14 @@ export default function Text({ children, link, ...annotations }: TextProps) {
     },
     annotations,
   };
+}
+
+export default Text as typeof Text & {
+  [tag]: 'text';
+};
+
+declare module '../types.ts' {
+  export interface ElementTypeMap {
+    text: TextElement;
+  }
 }
