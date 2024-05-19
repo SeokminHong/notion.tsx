@@ -2,7 +2,7 @@
   "extends": "@seokminhong/configs/tsconfig/node",
   "compilerOptions": {
     "jsx": "react-jsx",
-    "jsxImportSource": "notion-jsx"
+    "jsxImportSource": "notion.jsx"
   },
   "include": ["src"],
   "exclude": ["node_modules"]

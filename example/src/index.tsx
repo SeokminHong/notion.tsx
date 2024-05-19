@@ -1,5 +1,5 @@
 import { Client } from '@notionhq/client';
-import { Page, Property } from 'notion-jsx';
+import { Page, Property } from 'notion.jsx';
 
 import 'dotenv/config';
 

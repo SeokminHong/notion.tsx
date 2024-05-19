@@ -14,7 +14,7 @@ importers:
       dotenv:
         specifier: ^16.4.5
         version: 16.4.5
-      notion-jsx:
+      notion.jsx:
         specifier: file:///..
         version: file:..(@notionhq/client@2.2.15)
     devDependencies:
@@ -1120,7 +1120,7 @@ packages:
   normalize-package-data@2.5.0:
     resolution: {integrity: sha512-/5CMN3T0R4XTj4DcGaexo+roZSdSFW/0AOOTROrjxzCG1wrWXEsGbRKevjlIL+ZDE4sZlJr5ED4YW0yqmkK+eA==}
 
-  notion-jsx@file:..:
+  notion.jsx@file:..:
     resolution: {directory: .., type: directory}
     peerDependencies:
       '@notionhq/client': ^2.2.15
@@ -2776,7 +2776,7 @@ snapshots:
       semver: 5.7.2
       validate-npm-package-license: 3.0.4
 
-  notion-jsx@file:..(@notionhq/client@2.2.15):
+  notion.jsx@file:..(@notionhq/client@2.2.15):
     dependencies:
       '@notionhq/client': 2.2.15
 
