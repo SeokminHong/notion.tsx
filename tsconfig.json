@@ -2,9 +2,9 @@
   "extends": "@seokminhong/configs/tsconfig/node",
   "compilerOptions": {
     "allowImportingTsExtensions": true,
-    "emitDeclarationOnly": true,
+    "noEmit": true,
     "jsx": "react-jsx"
   },
   "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "example"]
 }
