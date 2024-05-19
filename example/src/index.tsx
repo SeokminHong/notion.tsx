@@ -1,4 +1,5 @@
 import { Client } from '@notionhq/client';
+import { Page, Property } from 'notion-jsx';
 
 import 'dotenv/config';
 
@@ -19,32 +20,24 @@ await client.databases.retrieve({
 const a = undefined as number | undefined;
 const b = 3 as number | undefined;
 
-const res = await client.pages.create({
-  parent: {
-    database_id: databaseId,
-  },
-  properties: {
-    Name: {
-      type: 'title',
-      title: [<text>text page!</text>],
-    },
-  },
-  children: (
-    <>
-      <p
-        slot={
-          <code language="javascript">
-            <text bold>console</text>
-            .log(a)
-          </code>
-        }
-      >
-        Test {a}
-        {b} <text italic>content</text>
-      </p>
-      <p>New paragraph</p>
-    </>
-  ),
-});
+const req = (
+  <Page parentDatabaseId={databaseId}>
+    <Property.Title name="Name">text page!</Property.Title>
+    <p
+      slot={
+        <code language="javascript">
+          <text bold>console</text>
+          .log(a)
+        </code>
+      }
+    >
+      Test {a}
+      {b} <text italic>content</text>
+    </p>
+    <p>New paragraph</p>
+  </Page>
+);
+
+const res = await client.pages.create(req);
 
 console.log(res);
