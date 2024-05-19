@@ -1,6 +1,6 @@
-import Code from './primitives/Code.tsx';
-import Paragraph from './primitives/Paragraph.tsx';
-import Text from './primitives/Text.tsx';
+import Code from './primitives/code.ts';
+import Paragraph from './primitives/paragraph.ts';
+import Text from './primitives/text.ts';
 import type { ElementTypeMap } from './types/element.ts';
 
 const ELEMENT_MAP = {
