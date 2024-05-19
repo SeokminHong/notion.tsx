@@ -1,3 +1,4 @@
+import { PageElement } from '../components/page.ts';
 import type { JSX, Node } from '../jsx-runtime.ts';
 import type { BlockObject } from '../types/block.ts';
 import { BLOCK_KEYS } from '../types/block.ts';
@@ -22,17 +23,15 @@ export function isProperty(element: JSX.Element): element is PropertyElement {
   return element instanceof PropertyElement;
 }
 
-type TypedElement = Extract<JSX.Element, { type: string }>;
-
-export function hasType(element: JSX.Element): element is TypedElement {
-  return Object.hasOwn(element, 'type');
+export function isRootNode(element: JSX.Element): element is PageElement {
+  return element instanceof PageElement;
 }
 
 export function isBlock(element: JSX.Element): element is BlockObject {
   if (isProperty(element)) {
     return false;
   }
-  if (!hasType(element)) {
+  if (isRootNode(element)) {
     return false;
   }
   return (BLOCK_KEYS as readonly string[]).includes(element.type);

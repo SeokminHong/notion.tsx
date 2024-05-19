@@ -35,10 +35,12 @@ function getParentField(value: PageParent) {
   };
 }
 
-interface PageElement {
-  parent: ReturnType<typeof getParentField>;
-  properties: Record<string, Property>;
-  children: BlockObject[];
+export class PageElement {
+  constructor(
+    readonly parent: ReturnType<typeof getParentField>,
+    readonly properties: Record<string, Property>,
+    readonly children: BlockObject[],
+  ) {}
 }
 
 export default function Page({
@@ -47,11 +49,11 @@ export default function Page({
 }: PageProps): PageElement {
   const { properties, children: content } = renderPage(children);
 
-  return {
-    parent: getParentField(parentProps),
-    properties: Object.fromEntries(properties.entries()),
-    children: content,
-  };
+  return new PageElement(
+    getParentField(parentProps),
+    Object.fromEntries(properties.entries()),
+    content,
+  );
 }
 
 declare module '../types/element.ts' {
