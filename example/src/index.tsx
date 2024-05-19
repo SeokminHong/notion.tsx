@@ -1,5 +1,4 @@
-import { Client } from '@notionhq/client';
-import { Page, Property } from 'notion.jsx';
+import { Client, Page, Property } from 'notion.jsx';
 
 import 'dotenv/config';
 
@@ -20,7 +19,7 @@ await client.databases.retrieve({
 const a = undefined as number | undefined;
 const b = 3 as number | undefined;
 
-const req = (
+await client.pages.create(
   <Page parentDatabaseId={databaseId}>
     <Property.Title name="Name">text page!</Property.Title>
     <p
@@ -34,10 +33,7 @@ const req = (
       Test {a}
       {b} <text italic>content</text>
     </p>
+    123
     <p>New paragraph</p>
-  </Page>
+  </Page>,
 );
-
-const res = await client.pages.create(req);
-
-console.log(res);
