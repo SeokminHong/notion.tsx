@@ -1,9 +1,9 @@
-# Notion.jsx
+# Notion.tsx
 
 ## How to use
 
 ```sh
-npm install notion.jsx @notionhq/client
+npm install notion.tsx @notionhq/client
 ```
 
 ```jsonc
@@ -11,7 +11,7 @@ npm install notion.jsx @notionhq/client
 {
   "compilerOptions": {
     "jsx": "react-jsx",
-    "jsxImportSource": "notion.jsx",
+    "jsxImportSource": "notion.tsx",
   },
 }
 ```
@@ -21,7 +21,7 @@ npm install notion.jsx @notionhq/client
 ### Code
 
 ```tsx
-import { Client, Page, Property } from 'notion.jsx';
+import { Client, Page, Property } from 'notion.tsx';
 
 const client = new Client({
   auth: process.env.NOTION_API_KEY,

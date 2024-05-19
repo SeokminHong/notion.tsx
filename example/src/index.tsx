@@ -1,4 +1,4 @@
-import { Client, Page, Property } from 'notion.jsx';
+import { Client, Page, Property } from 'notion.tsx';
 
 import 'dotenv/config';
 
