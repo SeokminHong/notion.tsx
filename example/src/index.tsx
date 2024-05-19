@@ -1,5 +1,4 @@
 import { Client } from '@notionhq/client';
-import { Code, Paragraph, Text } from 'notion-jsx';
 
 import 'dotenv/config';
 
@@ -27,25 +26,23 @@ const res = await client.pages.create({
   properties: {
     Name: {
       type: 'title',
-      title: [<Text>text page!</Text>],
+      title: [<text>text page!</text>],
     },
   },
   children: (
     <>
-      <Paragraph
+      <p
         slot={
-          <Code language="javascript">
-            <Text bold>console</Text>
+          <code language="javascript">
+            <text bold>console</text>
             .log(a)
-          </Code>
+          </code>
         }
       >
         Test {a}
-        {b} <Text italic>content</Text>
-      </Paragraph>
-      <Paragraph>
-        <Text>New paragraph</Text>
-      </Paragraph>
+        {b} <text italic>content</text>
+      </p>
+      <p>New paragraph</p>
     </>
   ),
 });
