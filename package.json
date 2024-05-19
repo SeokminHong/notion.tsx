@@ -26,9 +26,17 @@
     "build": "vite build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "jsx",
+    "typescript",
+    "notion"
+  ],
   "author": "Seokmin Hong <ghdtjrald240@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SeokminHong/notion.tsx"
+  },
   "packageManager": "pnpm@9.1.0",
   "devDependencies": {
     "@seokminhong/configs": "^1.0.3",

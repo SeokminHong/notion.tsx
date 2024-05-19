@@ -50,7 +50,7 @@ await client.pages.create(
 
 ### Result
 
-![Result page](./assets/example-screenshot.png)
+![Result page](https://raw.githubusercontent.com/SeokminHong/notion.tsx/main/assets/example-screenshot.png)
 
 ## Supported Syntaxes
 
