@@ -66,7 +66,7 @@ await client.pages.create(
 - [ ] `file`
 - [ ] `audio`
 - [ ] `math`
-- [ ] `divider`
+- [ ] `hr`
 - [ ] `breadcrumb`
 - [ ] `toc`
 - [ ] `a`
