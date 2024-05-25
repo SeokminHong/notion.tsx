@@ -21,13 +21,14 @@ npm install notion.tsx @notionhq/client
 ### Code
 
 ```tsx
-import { Client, Page, Property } from 'notion.tsx';
+import { Client } from '@notionhq/client';
+import { notionTsx, Page, Property } from 'notion.tsx';
 
 const client = new Client({
   auth: process.env.NOTION_API_KEY,
 });
 
-await client.pages.create(
+await notionTsx(client).createPage(
   <Page parentDatabaseId={databaseId}>
     <Property.Title name="Name">text page!</Property.Title>
     <p

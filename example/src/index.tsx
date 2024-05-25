@@ -1,4 +1,5 @@
-import { Client, Page, Property } from 'notion.tsx';
+import { Client } from '@notionhq/client';
+import { notionTsx, Page, Property } from 'notion.tsx';
 
 import 'dotenv/config';
 
@@ -19,7 +20,7 @@ await client.databases.retrieve({
 const a = undefined as number | undefined;
 const b = 3 as number | undefined;
 
-await client.pages.create(
+await notionTsx(client).createPage(
   <Page parentDatabaseId={databaseId}>
     <Property.Title name="Name">text page!</Property.Title>
     <p
