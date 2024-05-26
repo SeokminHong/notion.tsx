@@ -1,7 +1,7 @@
-import { Client } from '@notionhq/client';
-import { notionTsx, Page } from 'notion.tsx';
+import { Client } from "@notionhq/client";
+import { notionTsx, Page } from "notion.tsx";
 
-import 'dotenv/config';
+import "dotenv/config";
 
 const client = new Client({
   auth: process.env.NOTION_API_KEY,
@@ -10,7 +10,7 @@ const client = new Client({
 const databaseId = process.env.DATABASE_UUID;
 
 if (databaseId === undefined) {
-  throw new Error('env DATABASE_UUID is not provided.');
+  throw new Error("env DATABASE_UUID is not provided.");
 }
 
 await client.databases.retrieve({
@@ -25,6 +25,7 @@ await notionTsx(client).createPage(
     <property type="title" name="Name">
       text page!
     </property>
+    <property type="select" name="Test Select" optionName="aaa" />
     <p
       slot={
         <code language="javascript">
@@ -38,5 +39,5 @@ await notionTsx(client).createPage(
     </p>
     123
     <p>New paragraph</p>
-  </Page>,
+  </Page>
 );
