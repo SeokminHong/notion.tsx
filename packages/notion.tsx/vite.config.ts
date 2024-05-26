@@ -9,5 +9,6 @@ export default defineConfig({
       formats: ['es', 'cjs'],
     },
     outDir: 'dist',
+    sourcemap: true,
   },
 });
