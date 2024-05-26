@@ -3,12 +3,12 @@ import { PropertyElement } from '../../types/properties.ts';
 import type { PropertyPropsBase } from './common.ts';
 
 export interface NumberProperty {
-  number: number;
+  number?: number;
   type: 'number';
 }
 
 interface NumberProps extends PropertyPropsBase {
-  value: number;
+  value?: number;
 }
 
 export default function Number({ name, value }: NumberProps) {

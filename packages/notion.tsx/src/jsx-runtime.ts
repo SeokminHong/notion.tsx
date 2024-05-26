@@ -55,14 +55,6 @@ export type SlotNode =
   | undefined
   | Iterable<SlotNode>;
 
-export type RequiredNode =
-  | JSX.Element
-  | string
-  | number
-  | boolean
-  | null
-  | Iterable<Node>;
-
 type PropType<T> = T extends (props: infer P) => unknown
   ? P
   : T extends ElementKey
