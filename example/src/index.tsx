@@ -1,5 +1,5 @@
 import { Client } from '@notionhq/client';
-import { notionTsx, Page, Property } from 'notion.tsx';
+import { notionTsx, Page } from 'notion.tsx';
 
 import 'dotenv/config';
 
@@ -22,7 +22,9 @@ const b = 3 as number | undefined;
 
 await notionTsx(client).createPage(
   <Page parentDatabaseId={databaseId}>
-    <Property.Title name="Name">text page!</Property.Title>
+    <property type="title" name="Name">
+      text page!
+    </property>
     <p
       slot={
         <code language="javascript">
