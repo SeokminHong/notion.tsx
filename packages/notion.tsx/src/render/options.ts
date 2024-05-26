@@ -1,35 +1,35 @@
 import type { Node } from '../jsx-runtime.ts';
 import type { ElementTypeMap } from '../types/element.ts';
 import {
-  isContent,
   isFalsyNode,
   isIterable,
   isPrimitiveNode,
+  isProperty,
+  isRootNode,
 } from '../utils/render.ts';
 
-export default function renderRichText(
+export default function renderOptions(
   node: Node,
-): Array<ElementTypeMap['text']> {
+): Array<ElementTypeMap['option']> {
   if (isFalsyNode(node)) {
     return [];
   }
   if (isPrimitiveNode(node)) {
     return [
       {
-        type: 'text',
-        text: {
-          content: node.toString(),
-        },
+        name: node.toString(),
       },
     ];
   }
   if (isIterable(node)) {
-    return [...node].flatMap(renderRichText);
+    return [...node].flatMap(renderOptions);
   }
-  if (!isContent(node) || node.type !== 'text') {
+
+  if (isProperty(node) || isRootNode(node) || 'type' in node) {
     throw new TypeError(
-      `Expected a text node, but got ${JSON.stringify(node, null, 2)}`,
+      `Expected an option nodes, but got ${JSON.stringify(node, null, 2)}`,
     );
   }
+
   return [node];
 }

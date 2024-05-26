@@ -1,3 +1,5 @@
+import type { RequiredNode } from '../../jsx-runtime.ts';
+import renderOption from '../../render/option.ts';
 import type { Color } from '../../types/enum.ts';
 import { PropertyElement } from '../../types/properties.ts';
 
@@ -13,29 +15,14 @@ export interface SelectProperty {
   type: 'select';
 }
 
-type SelectPropsBase =
-  | {
-      id: string;
-      optionName?: string;
-    }
-  | {
-      id?: string;
-      optionName: string;
-    };
+interface SelectProps extends PropertyPropsBase {
+  children: RequiredNode;
+}
 
-type SelectProps = PropertyPropsBase &
-  SelectPropsBase & {
-    color?: Color;
-    description?: string;
-  };
-
-export default function Select({ name, optionName, ...props }: SelectProps) {
+export default function Select({ name, children }: SelectProps) {
   return new PropertyElement(name, {
     type: 'select',
-    select: {
-      name: optionName,
-      ...props,
-    },
+    select: renderOption(children),
   });
 }
 

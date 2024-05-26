@@ -25,7 +25,13 @@ await notionTsx(client).createPage(
     <property type="title" name="Name">
       text page!
     </property>
-    <property type="select" name="Test Select" optionName="aaa" />
+    <property type="select" name="Test Select">
+      <option name="aaa" />
+    </property>
+    <property type="multi-select" name="Tags">
+      <option name="Notion" />
+      <option name="API" />
+    </property>
     <p
       slot={
         <code language="javascript">

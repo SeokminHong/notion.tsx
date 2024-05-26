@@ -1,5 +1,6 @@
 import Code from './primitives/code.ts';
 import Paragraph from './primitives/paragraph.ts';
+import Option from './primitives/properties/helper/option.ts';
 import Property from './primitives/property.ts';
 import Text from './primitives/text.ts';
 import type { ElementTypeMap } from './types/element.ts';
@@ -9,6 +10,7 @@ const ELEMENT_MAP = {
   p: Paragraph,
   text: Text,
   property: Property,
+  option: Option,
 } as const;
 
 type ElementKey = keyof typeof ELEMENT_MAP;
@@ -52,6 +54,14 @@ export type SlotNode =
   | null
   | undefined
   | Iterable<SlotNode>;
+
+export type RequiredNode =
+  | JSX.Element
+  | string
+  | number
+  | boolean
+  | null
+  | Iterable<Node>;
 
 type PropType<T> = T extends (props: infer P) => unknown
   ? P
