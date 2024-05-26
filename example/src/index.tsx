@@ -33,6 +33,7 @@ await notionTsx(client).createPage(
       <option name="API" />
     </property>
     <property type="number" name="Number" value={25} />
+    <property type="url" name="URL" url="https://github.com" />
     <p
       slot={
         <code language="javascript">

@@ -4,12 +4,14 @@ import MultiSelect from './multi-select.ts';
 import Number from './number.ts';
 import Select from './select.ts';
 import Title from './title.ts';
+import Url from './url.ts';
 
 const Properties = {
   title: Title,
   select: Select,
   'multi-select': MultiSelect,
   number: Number,
+  url: Url,
 } as const satisfies {
   [K in keyof PropertyMap]: unknown;
 };
