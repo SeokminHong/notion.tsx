@@ -1,0 +1,52 @@
+{
+  "name": "notion.tsx",
+  "version": "0.2.0",
+  "description": "",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./src/index.ts"
+    },
+    "./jsx-runtime": {
+      "import": "./dist/jsx-runtime.js",
+      "require": "./dist/jsx-runtime.cjs",
+      "types": "./src/jsx-runtime.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "tsconfig.json"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "jsx",
+    "typescript",
+    "notion"
+  ],
+  "author": "Seokmin Hong <ghdtjrald240@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SeokminHong/notion.tsx"
+  },
+  "packageManager": "pnpm@9.1.0",
+  "devDependencies": {
+    "@seokminhong/configs": "^1.0.3",
+    "@types/node": "^20.12.12",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.11"
+  },
+  "peerDependencies": {
+    "@notionhq/client": "^2.2.15"
+  }
+}
