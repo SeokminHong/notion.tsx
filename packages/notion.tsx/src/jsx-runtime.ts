@@ -1,4 +1,7 @@
 import Code from './primitives/code.ts';
+import H1 from './primitives/h1.ts';
+import H2 from './primitives/h2.ts';
+import H3 from './primitives/h3.ts';
 import Paragraph from './primitives/paragraph.ts';
 import Person from './primitives/person.ts';
 import Option from './primitives/properties/helper/option.ts';
@@ -8,6 +11,9 @@ import type { ElementTypeMap } from './types/element.ts';
 
 const ELEMENT_MAP = {
   code: Code,
+  h1: H1,
+  h2: H2,
+  h3: H3,
   option: Option,
   p: Paragraph,
   person: Person,
