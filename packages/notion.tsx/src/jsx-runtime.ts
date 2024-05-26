@@ -1,5 +1,6 @@
 import Code from './primitives/code.ts';
 import Paragraph from './primitives/paragraph.ts';
+import Person from './primitives/person.ts';
 import Option from './primitives/properties/helper/option.ts';
 import Property from './primitives/property.ts';
 import Text from './primitives/text.ts';
@@ -7,10 +8,11 @@ import type { ElementTypeMap } from './types/element.ts';
 
 const ELEMENT_MAP = {
   code: Code,
-  p: Paragraph,
-  text: Text,
-  property: Property,
   option: Option,
+  p: Paragraph,
+  person: Person,
+  property: Property,
+  text: Text,
 } as const;
 
 type ElementKey = keyof typeof ELEMENT_MAP;

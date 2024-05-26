@@ -34,6 +34,7 @@ await notionTsx(client).createPage(
     </property>
     <property type="number" name="Number" value={25} />
     <property type="url" name="URL" url="https://github.com" />
+    <property type="people" name="Person" />
     <p
       slot={
         <code language="javascript">
