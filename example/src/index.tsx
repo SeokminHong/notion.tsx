@@ -32,6 +32,7 @@ await notionTsx(client).createPage(
       <option name="Notion" />
       <option name="API" />
     </property>
+    <property type="number" name="Number" value={25} />
     <p
       slot={
         <code language="javascript">
